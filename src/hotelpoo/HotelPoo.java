@@ -138,7 +138,7 @@ public class HotelPoo {
         clients.add(new Client(NIF, nom, localitat, dateTime, false));
         System.out.println("Client afegit correctament!");
     }
-    
+    //METODOS Q HAY FUERA DEL MAIN DASJDSADSADSA
     private static void llistarClients(ArrayList<Client> clients) {
         if (clients.isEmpty()) {
             System.out.println("No hi ha clients registrats.");
@@ -227,7 +227,7 @@ public class HotelPoo {
         sc.nextLine();
         
         serveis.add(new Servei(id, desc, preu));
-        System.out.println("Servei afegit correctament!");
+        System.out.println("Servei afegit correctament");
     }
     
     private static void llistarServeis(ArrayList<Servei> serveis) {
@@ -256,7 +256,7 @@ public class HotelPoo {
         double nouPreu = sc.nextDouble();
         sc.nextLine();
         servei.setPreuServei(nouPreu);
-        System.out.println("✓ Servei modificat correctament!");
+        System.out.println("Servei modificat correctament!");
     }
     
 //aca hago el submenu
@@ -348,25 +348,25 @@ public class HotelPoo {
         // Mostrar habitacions lliures
         System.out.println("Habitacions lliures:");
         boolean hiHaLliures = false;
-        for (Habitacion h : habitacions) {
-            if (h.getLliure()) {
-                System.out.println(h);
+        for (Habitacion i : habitacions) {
+            if (i.getLliure()) {
+                System.out.println(i);
                 hiHaLliures = true;
             }
         }
         
         if (!hiHaLliures) {
-            System.out.println("ERROR: No hi ha habitacions lliures!");
+            System.out.println("ERROR: No hi ha habitacions lliures");
             return;
         }
         
-        System.out.print("Número d'habitació: ");
+        System.out.print("Número de habitació: ");
         int numHab = sc.nextInt();
         sc.nextLine();
         
         Habitacion hab = buscarHabitacio(numHab, habitacions);
         if (hab == null || !hab.getLliure()) {
-            System.out.println("ERROR: Habitació no disponible!");
+            System.out.println("ERROR: Habitació no disponible");
             return;
         }
         
@@ -435,7 +435,7 @@ public class HotelPoo {
         
         Estada estada = buscarEstadaActiva(NIF, estadas);
         if (estada == null) {
-            System.out.println("ERROR: El client no té cap estada activa!");
+            System.out.println("ERROR: El client no té cap estada activa");
             return;
         }
         
@@ -472,7 +472,6 @@ public class HotelPoo {
         System.out.println("===================================");
     }
     
-    //METODOS Q HAY FUERA DEL MAIN DASJDSADSADSA
     private static Client buscarClient(String NIF, ArrayList<Client> clients) {
         for (Client i : clients) {
             if (i.getNIF().equals(NIF)) {
